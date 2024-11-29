@@ -1,6 +1,6 @@
 MAKEFLAGS += --silent
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -Iincludes -g3
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 SRCS =	megaphone.cpp
 		
 OBJ = $(addprefix $(BIN_DIR)/,$(SRCS:.cpp=.o))
