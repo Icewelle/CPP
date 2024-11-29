@@ -53,17 +53,16 @@ void Contacts::display_all(int index)
 	std::cout << std::setw(10);
 	std::cout << Contacts::first_name;
 	std::cout << '|';
-	if (Contacts::first_name.length() > 10)
-		Contacts::first_name.replace(9, Contacts::first_name.length() - 1, ".");
+	if (Contacts::last_name.length() > 10)
+		Contacts::last_name.replace(9, Contacts::last_name.length() - 1, ".");
 	std::cout << std::setw(10);
-	std::cout << Contacts::first_name;
+	std::cout << Contacts::last_name;
 	std::cout << '|';
-	if (Contacts::first_name.length() > 10)
-		Contacts::first_name.replace(9, Contacts::first_name.length() - 1, ".");
+	if (Contacts::nickname.length() > 10)
+		Contacts::nickname.replace(9, Contacts::nickname.length() - 1, ".");
 	std::cout << std::setw(10);
-	std::cout << Contacts::first_name;
+	std::cout << Contacts::nickname;
 	std::cout << '\n';
-
 	return ;
 }
 

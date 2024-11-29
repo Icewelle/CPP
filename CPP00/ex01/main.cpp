@@ -7,7 +7,7 @@ int main()
 
 	while (1)
 	{
-		std::cout << "Please enter a command : \n";
+		std::cout << "Enter a command (ADD, SEARCH or EXIT): \n";
 		std::cin >> str;
 		if (str == "ADD")
 			phonebook.add_contact();

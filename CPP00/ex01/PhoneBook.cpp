@@ -2,7 +2,13 @@
 
 PhoneBook::PhoneBook()
 {
-
+	std::cout << "______ _                     ______             _    \n";
+	std::cout << "| ___ \\ |                    | ___ \\           | |   \n";
+	std::cout << "| |_/ / |__   ___  _ __   ___| |_/ / ___   ___ | | __\n";
+	std::cout << "|  __/| '_ \\ / _ \\| ' _\\ / _ \\ ___ \\/ _ \\ / _ \\| |/ /\n";
+	std::cout << "| |   | | | | (_) | | | |  __/ |_/ / (_) | (_) |   < \n";
+	std::cout << "\\_|   |_| |_|\\___/|_| |_|\\___\\____/ \\___/ \\___/|_|\\_\\\n\n\n";
+	return ;
 }
 
 PhoneBook::~PhoneBook()
@@ -15,7 +21,7 @@ void PhoneBook::add_contact()
 {
 	static int	i;
 
-	if (i == 7)
+	if (i == 8)
 		i = 0;
 	PhoneBook::contacts[i++].add();
 }
