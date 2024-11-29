@@ -3,8 +3,10 @@
 
 # include <iostream>
 # include <iomanip>
+# include <string>
+# include <limits>
 
-class contacts
+class Contacts
 {
 	private:
 		std::string first_name;
@@ -13,20 +15,20 @@ class contacts
 		int phone_number;
 		std::string dark_secret;
 	public:
-		contacts();
-		~contacts();
+		Contacts();
+		~Contacts();
 		void add();
 		void display_all(int i);
 		void display_one();
 };
 
-class phonebook
+class PhoneBook
 {
 	private:
-		contacts contacts[8];
+		Contacts contacts[8];
 	public:
-		phonebook();
-		~phonebook();
+		PhoneBook();
+		~PhoneBook();
 		void add_contact();
 		void search_contact();
 };

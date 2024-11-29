@@ -3,7 +3,7 @@
 int main()
 {
 	std::string str;
-	phonebook phonebook;
+	PhoneBook phonebook;
 
 	while (1)
 	{
