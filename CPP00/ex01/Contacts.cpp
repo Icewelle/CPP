@@ -5,7 +5,7 @@ Contacts::Contacts(/* args */)
 	Contacts::first_name = "Empty";
 	Contacts::last_name = "Empty";
 	Contacts::nickname = "Empty";
-	Contacts::phone_number = 0;
+	Contacts::phone_number = "Empty";
 	Contacts::dark_secret = "Empty";
 
 	return ;
@@ -19,26 +19,17 @@ Contacts::~Contacts()
 void Contacts::add()
 {
 	std::cout << "\nAdding contact. Please follow instructions.\n\nEnter first name :\n";
-	std::cin >> Contacts::first_name;
+	std::getline(std::cin, Contacts::first_name);
 	std::cout << "\nEnter last name :\n";
-	std::cin >> Contacts::last_name;
+	std::getline(std::cin, Contacts::last_name);
 	std::cout << "\nEnter nickname :\n";
-	std::cin >> Contacts::nickname;
+	std::getline(std::cin, Contacts::nickname);
 	std::cout << "\nEnter phone number :\n";
-	while (1)
-	{
-		std::cin >> Contacts::phone_number;
-		if (std::cin.fail())
-		{
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "Invalid input, only integers are allowed\nPleas try again :\n";
-		}
-		else
-			break ;
-	}
+	std::getline(std::cin, Contacts::phone_number);
+	//verif phone number
+
 	std::cout << "\nEnter dark secret :\n";
-	std::cin >> Contacts::dark_secret;
+	std::getline(std::cin, Contacts::dark_secret);
 	std::cout << std::endl;
 	return ;
 }
