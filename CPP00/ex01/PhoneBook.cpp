@@ -28,20 +28,24 @@ void PhoneBook::add_contact()
 
 void PhoneBook::search_contact()
 {
-	std::string tmp;
 	int			index;
-	size_t		pos;
+	std::string	tmp;
 
-	std::cout << "     INDEX|FIRST NAME| LAST NAME|  NICKNAME\n";
+	std::cout << "     INDEX|FIRST NAME| LAST NAME|  _nickname\n";
 	for (int i = 0; i < 8; i++)
 		PhoneBook::contacts[i].display_all(i + 1);
 	std::cout << "\nEnter index of the contact you want informations :\n";
 	while (1)
 	{
-		std::getline(std::cin, tmp);
-		index = std::stoi(tmp, &pos);
-		if (index < 1 || index > 8)
-			std::cout << "Please enter an index between 1 to 8\n\n";
+		std::cin >> index;
+		if (std::cin.eof())
+            return;
+		if (std::cin.fail() || index < 1 || index > 8)
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Invalid input. Enter a number between 1 & 8.\n\n";
+		}
 		else
 			break;
 	}

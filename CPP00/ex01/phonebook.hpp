@@ -5,15 +5,16 @@
 # include <iomanip>
 # include <string>
 # include <limits>
+# include <cstdlib>
 
 class Contacts
 {
 	private:
-		std::string first_name;
-		std::string last_name;
-		std::string nickname;
-		std::string phone_number;
-		std::string dark_secret;
+		std::string _first_name;
+		std::string _last_name;
+		std::string _nickname;
+		int			_phone_number;
+		std::string _dark_secret;
 	public:
 		Contacts();
 		~Contacts();
