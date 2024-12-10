@@ -2,7 +2,7 @@ MAKEFLAGS += --silent
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 SRCS =	main.cpp\
-		Contacts.cpp\
+		Contact.cpp\
 		PhoneBook.cpp
 		
 OBJ = $(addprefix $(BIN_DIR)/,$(SRCS:.cpp=.o))

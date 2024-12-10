@@ -7,7 +7,7 @@
 # include <limits>
 # include <cstdlib>
 
-class Contacts
+class Contact
 {
 	private:
 		std::string _first_name;
@@ -16,8 +16,8 @@ class Contacts
 		int			_phone_number;
 		std::string _dark_secret;
 	public:
-		Contacts();
-		~Contacts();
+		Contact();
+		~Contact();
 		void add();
 		void display_all(int i);
 		void display_one();
@@ -26,7 +26,7 @@ class Contacts
 class PhoneBook
 {
 	private:
-		Contacts contacts[8];
+		Contact _Contact[8];
 	public:
 		PhoneBook();
 		~PhoneBook();

@@ -23,7 +23,7 @@ void PhoneBook::add_contact()
 
 	if (i == 8)
 		i = 0;
-	PhoneBook::contacts[i++].add();
+	PhoneBook::_Contact[i++].add();
 }
 
 void PhoneBook::search_contact()
@@ -33,7 +33,7 @@ void PhoneBook::search_contact()
 
 	std::cout << "     INDEX|FIRST NAME| LAST NAME|  _nickname\n";
 	for (int i = 0; i < 8; i++)
-		PhoneBook::contacts[i].display_all(i + 1);
+		PhoneBook::_Contact[i].display_all(i + 1);
 	std::cout << "\nEnter index of the contact you want informations :\n";
 	while (1)
 	{
@@ -49,6 +49,6 @@ void PhoneBook::search_contact()
 		else
 			break;
 	}
-	PhoneBook::contacts[index - 1].display_one();
+	PhoneBook::_Contact[index - 1].display_one();
 	std::cout << std::endl;
 }
