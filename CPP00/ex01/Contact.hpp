@@ -1,6 +1,7 @@
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
+# include <string>
 # include <iostream>
 # include <iomanip>
 # include <string>
@@ -21,17 +22,6 @@ class Contact
 		void add();
 		void display_all(int i);
 		void display_one();
-};
-
-class PhoneBook
-{
-	private:
-		Contact _Contact[8];
-	public:
-		PhoneBook();
-		~PhoneBook();
-		void add_contact();
-		void search_contact();
 };
 
 #endif

@@ -1,4 +1,4 @@
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
 {
@@ -31,7 +31,7 @@ void PhoneBook::search_contact()
 	int			index;
 	std::string	tmp;
 
-	std::cout << "     INDEX|FIRST NAME| LAST NAME|  _nickname\n";
+	std::cout << "     INDEX|FIRST NAME| LAST NAME|  NICKNAME\n";
 	for (int i = 0; i < 8; i++)
 		PhoneBook::_Contact[i].display_all(i + 1);
 	std::cout << "\nEnter index of the contact you want informations :\n";

@@ -1,4 +1,4 @@
-#include "phonebook.hpp"
+#include "Contact.hpp"
 
 Contact::Contact(/* args */)
 {
@@ -22,7 +22,7 @@ void Contact::add()
 	std::cin >> Contact::_first_name;
 	std::cout << "\nEnter last name :\n";
 	std::cin >> Contact::_last_name;
-	std::cout << "\nEnter _nickname :\n";
+	std::cout << "\nEnter nickname :\n";
 	std::cin >> Contact::_nickname;
 	std::cout << "\nEnter phone number :\n";
 	while (1)
@@ -72,7 +72,7 @@ void Contact::display_one()
 {
 	std::cout << "First name : " << Contact::_first_name << std::endl;
 	std::cout << "Last name : " << Contact::_last_name << std::endl;
-	std::cout << "_nickname : " << Contact::_nickname << std::endl;
+	std::cout << "Nickname : " << Contact::_nickname << std::endl;
 	std::cout << "Phone : " << Contact::_phone_number << std::endl;
 	std::cout << "Dark secret : " << Contact::_dark_secret << std::endl;
 }
