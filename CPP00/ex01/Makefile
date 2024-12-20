@@ -1,6 +1,6 @@
 MAKEFLAGS += --silent
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 SRCS =	main.cpp\
 		Contact.cpp\
 		PhoneBook.cpp

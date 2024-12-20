@@ -1,10 +1,12 @@
 MAKEFLAGS += --silent
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
-SRCS =	megaphone.cpp
+SRCS =	main.cpp\
+		Zombie.cpp\
+		zombieHorde.cpp
 		
 OBJ = $(addprefix $(BIN_DIR)/,$(SRCS:.cpp=.o))
-NAME = megaphone
+NAME = phonebook
 SRCS_DIR = .
 BIN_DIR = ./bin
 
