@@ -6,7 +6,7 @@ SRCS =	main.cpp\
 		zombieHorde.cpp
 		
 OBJ = $(addprefix $(BIN_DIR)/,$(SRCS:.cpp=.o))
-NAME = phonebook
+NAME = zombieHorde
 SRCS_DIR = .
 BIN_DIR = ./bin
 
