@@ -9,7 +9,7 @@ Weapon::Weapon(std::string weapon)
 
 Weapon::~Weapon() {}
 
-void Weapon::setType(const std::string &type)
+void Weapon::setType(const std::string type)
 {
 	_type = type;
 }
