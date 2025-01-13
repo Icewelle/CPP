@@ -1,7 +1,9 @@
 MAKEFLAGS += --silent
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
-SRCS =	main.cpp
+SRCS =	main.cpp\
+		find_and_replace.cpp\
+		filenames.cpp
 		
 OBJ = $(addprefix $(BIN_DIR)/,$(SRCS:.cpp=.o))
 NAME = replace
