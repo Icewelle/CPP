@@ -13,7 +13,7 @@ ScavTrap::ScavTrap(std::string name) {
 	_hitPoints = 100;
 	_enrgyPoints = 50;
 	_damage = 20;
-	std::cout << "SvacTrap constructor called" << std::endl;
+	std::cout << "ScavTrap constructor called" << std::endl;
 }
 
 ScavTrap::~ScavTrap() {

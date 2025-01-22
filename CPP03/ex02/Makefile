@@ -3,7 +3,8 @@ CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 SRCS =	main.cpp\
 		ClapTrap.cpp\
-		ScavTrap.cpp
+		ScavTrap.cpp\
+		FragTrap.cpp
 		
 OBJ = $(addprefix $(BIN_DIR)/,$(SRCS:.cpp=.o))
 NAME = ClapTrap
