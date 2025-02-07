@@ -1,6 +1,6 @@
 MAKEFLAGS += --silent
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 SRCS =	main.cpp\
 		Contact.cpp\
 		PhoneBook.cpp
@@ -28,12 +28,12 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@$(COMP_START)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CXXFLAGS) $(OBJ) -o $(NAME)
 	@$(COMP_END)
 
 $(BIN_DIR)/%.o: $(SRCS_DIR)/%.cpp
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CXXFLAGS) -c $< -o $@
 
 clean :
 	rm -rf $(BIN_DIR)

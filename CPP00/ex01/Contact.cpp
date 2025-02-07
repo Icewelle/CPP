@@ -47,23 +47,34 @@ void Contact::add()
 
 void Contact::display_all(int index)
 {
+	std::string	tmp;
+
 	std::cout << std::setw(8);
 	std::cout << "[" << index << "]";
 	std::cout << '|';
+	tmp = Contact::_first_name;
 	if (Contact::_first_name.length() > 10)
-		Contact::_first_name.replace(9, Contact::_first_name.length() - 1, ".");
+	{
+		tmp.replace(9, Contact::_first_name.length() - 1, ".");
+	}
 	std::cout << std::setw(10);
-	std::cout << Contact::_first_name;
+	std::cout << tmp;
 	std::cout << '|';
+	tmp = Contact::_last_name;
 	if (Contact::_last_name.length() > 10)
-		Contact::_last_name.replace(9, Contact::_last_name.length() - 1, ".");
+	{
+		tmp.replace(9, Contact::_last_name.length() - 1, ".");
+	}
 	std::cout << std::setw(10);
-	std::cout << Contact::_last_name;
+	std::cout << tmp;
 	std::cout << '|';
+	tmp = Contact::_nickname;
 	if (Contact::_nickname.length() > 10)
-		Contact::_nickname.replace(9, Contact::_nickname.length() - 1, ".");
+	{
+		tmp.replace(9, Contact::_nickname.length() - 1, ".");
+	}
 	std::cout << std::setw(10);
-	std::cout << Contact::_nickname;
+	std::cout << tmp;
 	std::cout << '\n';
 	return ;
 }
