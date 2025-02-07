@@ -1,6 +1,6 @@
 MAKEFLAGS += --silent
-CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 SRCS =	main.cpp\
 		Harl.cpp
 		
@@ -27,12 +27,12 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@$(COMP_START)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
 	@$(COMP_END)
 
 $(BIN_DIR)/%.o: $(SRCS_DIR)/%.cpp
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CXX) $(CFLAGS) -c $< -o $@
 
 clean :
 	rm -rf $(BIN_DIR)

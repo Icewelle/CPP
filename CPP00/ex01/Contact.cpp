@@ -18,13 +18,65 @@ Contact::~Contact()
 
 void Contact::add()
 {
-	std::cout << "\nAdding contact. Please follow instructions.\n\nEnter first name :\n";
-	std::cin >> Contact::_first_name;
-	std::cout << "\nEnter last name :\n";
-	std::cin >> Contact::_last_name;
-	std::cout << "\nEnter nickname :\n";
-	std::cin >> Contact::_nickname;
-	std::cout << "\nEnter phone number :\n";
+	bool isAscii = true;
+	std::cout << std::endl << "Adding contact. Please follow instructions." << std::endl << std::endl << "Enter first name :" << std::endl;
+	while (1)
+	{
+		std::cin >> Contact::_first_name;
+		for (size_t i = 0; i < _first_name.length(); i++)
+		{
+			if (!isascii(_first_name[i]))
+			{
+				isAscii = false;
+				break;
+			}
+			else
+				isAscii = true;
+		}
+		if (isAscii)
+			break;
+		else
+			std::cout << "Only ascii character are accepted" << std::endl;
+	}
+	std::cout << std::endl << "Enter last name :" << std::endl;
+	while (1)
+	{
+		std::cin >> Contact::_last_name;
+		for (size_t i = 0; i < _last_name.length(); i++)
+		{
+			if (!isascii(_last_name[i]))
+			{
+				isAscii = false;
+				break;
+			}
+			else
+				isAscii = true;
+		}
+		if (isAscii)
+			break;
+		else
+			std::cout << "Only ascii character are accepted" << std::endl;
+	}
+	std::cout << std::endl << "Enter nickname :" << std::endl;
+	while (1)
+	{
+		std::cin >> Contact::_nickname;
+		for (size_t i = 0; i < _nickname.length(); i++)
+		{
+			if (!isascii(_nickname[i]))
+			{
+				isAscii = false;
+				break;
+			}
+			else
+				isAscii = true;
+		}
+		if (isAscii)
+			break;
+		else
+			std::cout << "Only ascii character are accepted" << std::endl;
+	}
+	std::cout <<std::endl << "Enter phone number :" << std::endl;
 	while (1)
 	{
 		std::cin >> Contact::_phone_number;
@@ -34,12 +86,12 @@ void Contact::add()
 		{
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "Invalid input. Only numbers tolerated.\n\n";
+			std::cout << "Invalid input. Only numbers tolerated." << std::endl << std::endl;
 		}
 		else
 			break;
 	}
-	std::cout << "\nEnter dark secret :\n";
+	std::cout << std::endl << "Enter dark secret :" << std::endl;
 	std::cin >> Contact::_dark_secret;
 	std::cout << std::endl;
 	return ;
