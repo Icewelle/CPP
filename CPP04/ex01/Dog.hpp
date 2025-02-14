@@ -1,9 +1,11 @@
 #pragma once
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal {
 	private :
+		Brain *_brain;
 	public :
 		Dog();
 		Dog(const Dog &other);
@@ -11,4 +13,5 @@ class Dog : public Animal {
 
 		Dog &operator=(const Dog &other);
 		void makeSound(void) const;
+		const std::string &getIdea(int i) const;
 };
