@@ -6,9 +6,9 @@ Dog::Dog() {
 	std::cout << "A stupid being is born, who care" << std::endl;
 }
 
-Dog::Dog(const Dog &other) {
-	_type = other._type;
-	_brain = other._brain;
+Dog::Dog(const Dog &other) : Animal(other) {
+	_brain = new Brain(*other._brain); // Deep copy of Brain
+    std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog::~Dog() {
@@ -18,10 +18,11 @@ Dog::~Dog() {
 
 Dog &Dog::operator=(const Dog &other) {
 	if (this != &other) {
-		_type = other._type;
-		_brain = other._brain;
-	}
-	return (*this);
+        Animal::operator=(other); // Copy base class part
+        delete _brain; // Delete existing Brain
+        _brain = new Brain(*other._brain); // Deep copy of Brain
+    }
+    return *this;
 }
 
 void	Dog::makeSound(void) const {

@@ -8,9 +8,9 @@ Cat::Cat() {
 	std::cout << std::endl;
 }
 
-Cat::Cat(const Cat &other) {
-	_type = other._type;
-	_brain = other._brain;
+Cat::Cat(const Cat &other) : Animal(other) {
+	_brain = new Brain(*other._brain); // Deep copy of Brain
+    std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Cat::~Cat() {
@@ -20,10 +20,11 @@ Cat::~Cat() {
 
 Cat &Cat::operator=(const Cat &other) {
 	if (this != &other) {
-		_type = other._type;
-		_brain = other._brain;
-	}
-	return (*this);
+        Animal::operator=(other); // Copy base class part
+        delete _brain; // Delete existing Brain
+        _brain = new Brain(*other._brain); // Deep copy of Brain
+    }
+    return *this;
 }
 
 void	Cat::makeSound(void) const {

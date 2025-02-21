@@ -17,6 +17,7 @@ WrongAnimal::~WrongAnimal() {
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &other) {
 	if (this != &other)
 		_type = other._type;
+	return (*this);
 }
 
 std::string WrongAnimal::getType(void) const {
