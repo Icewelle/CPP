@@ -1,7 +1,7 @@
 #include "AMateria.hpp"
 #include "IMateriaSource.hpp"
 #include "ICharacter.hpp"
-
+#include "Character.hpp"
 
 int main()
 {
