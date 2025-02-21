@@ -2,6 +2,7 @@
 #include "IMateriaSource.hpp"
 #include "ICharacter.hpp"
 #include "Character.hpp"
+#include "MateriaSource.hpp"
 
 int main()
 {
