@@ -28,7 +28,6 @@ AMateria* AMateria::clone() const {
 	//je sais pas quoi faire ici
 }
 
-/* TO DO WHEN ICHARACTER IS CREATED
- void AMateria::use(ICharacter &target) {
-
-} */
+void AMateria::use(ICharacter &target) {
+	std::cout << "Materia as been used.\n";
+}

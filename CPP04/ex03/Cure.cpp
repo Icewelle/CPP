@@ -23,3 +23,7 @@ std::string const &Cure::getType(void) const {
 AMateria *Cure::clone() const {
 	return (new Cure(*this));
 }
+
+void Ice::use(ICharacter &target) {
+	std::cout << "* heals " << target.getName() << "'s wounds *\n";
+}
