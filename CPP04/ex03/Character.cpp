@@ -49,7 +49,7 @@ void Character::unequip(int idx) {
 		std::cout << "inventory only have 4 slot (0 to 3) please try again\n";
 		return;
 	}
-	
+	//floor ?
 	if (_inventory[idx]) {
 		_inventory[idx] = NULL;
 	}

@@ -26,6 +26,7 @@ std::string const &AMateria::getType(void) const {
 
 AMateria* AMateria::clone() const {
 	//je sais pas quoi faire ici
+	std::cout << "Wrong bro\n";
 }
 
 void AMateria::use(ICharacter &target) {
