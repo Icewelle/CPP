@@ -6,8 +6,8 @@ class MateriaSource : public IMateriaSource {
 	private :
 
 	public :
-	MateriaSource();
-	~MateriaSource() {}
-	void learnMateria(AMateria*);
-	AMateria* createMateria(std::string const & type);
+		MateriaSource();
+		~MateriaSource() {}
+		void learnMateria(AMateria* materia);
+		AMateria* createMateria(std::string const & type);
 };
