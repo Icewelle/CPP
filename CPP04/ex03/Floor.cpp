@@ -21,7 +21,7 @@ Floor::~Floor() {
 Floor	&Floor::operator=(const Floor &other) {
 	if (this != &other) {
 		for (int i = 0; i < 1000; ++i) {
-			if (other._floor)
+			if (other._floor[i])
 				_floor[i] = other._floor[i];
 		}
 	}

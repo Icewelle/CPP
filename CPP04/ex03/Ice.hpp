@@ -3,7 +3,6 @@
 #include "AMateria.hpp"
 
 class Ice : public AMateria {
-	private :
 	public : 
 		Ice();
 		Ice(const Ice &other);

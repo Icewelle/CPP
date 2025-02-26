@@ -1,6 +1,6 @@
 #include "AMateria.hpp"
 
-AMateria::AMateria() {}
+AMateria::AMateria() : _type("DefaultType") {}
 
 AMateria::AMateria(const AMateria &other) {
 	_type = other._type;
@@ -24,11 +24,7 @@ std::string const &AMateria::getType(void) const {
 	return (_type);
 }
 
-AMateria* AMateria::clone() const {
-	//je sais pas quoi faire ici
-	std::cout << "Wrong bro\n";
-}
-
 void AMateria::use(ICharacter &target) {
+	(void)target;
 	std::cout << "Materia as been used.\n";
 }

@@ -3,7 +3,6 @@
 #include "AMateria.hpp"
 
 class Cure : public AMateria {
-	private :
 	public : 
 		Cure();
 		Cure(const Cure &other);
@@ -12,5 +11,5 @@ class Cure : public AMateria {
 		Cure &operator=(const Cure &other);
 		std::string const &getType(void) const;
 		AMateria* clone() const;
-		//void use(ICharachter& target);
+		void use(ICharacter& target);
 };

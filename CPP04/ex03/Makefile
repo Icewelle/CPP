@@ -1,13 +1,16 @@
 MAKEFLAGS += --silent
-CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -Iincludes -g3
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g
 SRCS =	main.cpp\
 		AMateria.cpp\
-		Ice.cpp
+		Character.cpp\
+		Cure.cpp\
+		Ice.cpp\
+		Floor.cpp\
+		MateriaSource.cpp
 		
-OBJ = $(addprefix $(BIN_DIR)/,$(SRCS:.c=.o))
+OBJ = $(addprefix $(BIN_DIR)/,$(SRCS:.cpp=.o))
 NAME = Materia
-LIBFT = libft
 SRCS_DIR = .
 BIN_DIR = ./bin
 
@@ -29,22 +32,19 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@$(COMP_START)
-	@make -C $(LIBFT)
-	cc $(CFLAGS) $(OBJ) -o $(NAME) ./libft/libft.a -ldl -lm -lpthread -LMLX/build -lmlx42 -IMLX/include -lglfw
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 	@$(COMP_END)
 
-$(BIN_DIR)/%.o: $(SRCS_DIR)/%.c
+$(BIN_DIR)/%.o: $(SRCS_DIR)/%.cpp
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean :
 	rm -rf $(BIN_DIR)
-	@make clean -C $(LIBFT)
 	@$(CLEANED)
 
 fclean : clean
 	rm -f $(NAME)
-	rm -f $(LIBFT)/libft.a
 	@$(FCLEANED)
 
 re : fclean all

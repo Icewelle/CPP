@@ -1,10 +1,7 @@
 #pragma once
 
 #include "ICharacter.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
 #include "AMateria.hpp"
-#include "Floor.hpp"
 
 class Character : public ICharacter {
 	private :
