@@ -67,3 +67,11 @@ void Character::use(int idx, ICharacter &target) {
 	else
 		std::cout << "No materia in inventory slot [" << idx << "]\n";
 }
+
+AMateria *Character::getMateria(int idx) {
+	if (idx < 0 || idx > 3) {
+		std::cout << "GetMateria: inventory only have 4 slot (0 to 3) please try again\n";
+		return (NULL);
+	}
+	return (_inventory[idx]);
+}

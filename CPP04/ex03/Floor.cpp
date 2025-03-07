@@ -36,6 +36,7 @@ void	Floor::addOnFloor(AMateria *materia) {
 			break;
 		}
 	}
+	std::cout << "Materia [" << materia->getType() << "] has been droped on the floor\n";
 }
 
 void	Floor::cleanFloor(void) {
@@ -45,4 +46,5 @@ void	Floor::cleanFloor(void) {
 			_floor[i] = NULL;
 		}
 	}
+	std::cout << "Floor as been wiped\n";
 }

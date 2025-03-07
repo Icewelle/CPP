@@ -2,7 +2,7 @@
 
 int main()
 {
-	const Animal* j = new Dog();
+	/* const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
 	std::cout << i->getType() << std::endl;
@@ -12,6 +12,11 @@ int main()
 	std::cout << j->getType() << std::endl;
 	std::cout << j->getIdea(3) << std::endl;
 	delete j;//should not create a leak
-	delete i;
+	delete i; */
+
+	Cat basic;
+	{
+		Cat tmp = basic;
+	}
 	return 0;
 }
