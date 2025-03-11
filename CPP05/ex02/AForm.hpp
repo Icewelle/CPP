@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <exception>
+#include <fstream>
 
 class Bureaucrat;
 
@@ -26,7 +27,7 @@ class AForm {
 		int 				getGradeToSign(void) const;
 		int 				getGradeToExec(void) const;
 		bool 				beSigned(Bureaucrat& bureaucrat);
-		virtual void		execute(Bureaucrat& bureaucrat) = 0;
+		virtual void		execute(const Bureaucrat& executor) const = 0;
 
 		class GradeTooHighException : public std::exception {
 			public :
@@ -34,6 +35,11 @@ class AForm {
 		};
 	
 		class GradeTooLowException : public std::exception {
+			public :
+				const char* what() const throw();
+		};
+
+		class UnsignedForm : public std::exception {
 			public :
 				const char* what() const throw();
 		};

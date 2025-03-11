@@ -59,11 +59,25 @@ void Bureaucrat::downGrade(void) {
 }
 
 void Bureaucrat::signForm(AForm& form) {
+	if (form.getIsSigned()) {
+		std::cout << form.getName() << " is already signed.\n";
+		return;
+	}
 	if (form.beSigned(*this)) {
 		std::cout << form.getName() << " as been signed by " << _name << "\n";
 	}
 	else {
 		std::cout << "Form : " << form.getName() << " couldn't be signed because " << _name << "'s grade is too low\n";
+	}
+}
+
+void Bureaucrat::executeForm(const AForm& form) {
+	try {
+		form.execute(*this);
+	} catch (AForm::GradeTooLowException& e) {
+		std::cerr << form.getName() << ": couldn't execute: " << this->getName() << "'s " << e.what() << "\n";
+	} catch (AForm::UnsignedForm& e) {
+		std::cerr << e.what() << "\n";
 	}
 }
 

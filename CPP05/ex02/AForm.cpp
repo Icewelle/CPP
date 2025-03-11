@@ -22,7 +22,6 @@ AForm::AForm(const AForm& other) : _name(other._name), _gradeToSign(other._grade
 
 AForm::~AForm(void) {}
 
-//Non pertinant.
 AForm& AForm::operator=(const AForm& other) {
 	if (this != &other) {
 		_isSigned = other._isSigned;
@@ -54,11 +53,15 @@ bool AForm::beSigned(Bureaucrat& bureaucrat) {
 }
 
 const char* AForm::GradeTooHighException::what() const throw() {
-	return ("AForm: Grade too high");
+	return ("grade is too high");
 }
 
 const char* AForm::GradeTooLowException::what() const throw() {
-	return ("AForm: Grade too low");
+	return ("grade is too low");
+}
+
+const char* AForm::UnsignedForm::what() const throw() {
+	return ("form is unsigned");
 }
 
 std::ostream& operator<<(std::ostream& os, const AForm& form) {
