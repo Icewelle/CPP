@@ -13,7 +13,7 @@ int main(void) {
 		AForm *robo = new RobotomyRequestForm("robo");
 		AForm *prez = new PresidentialPardonForm("prez");
 		Bureaucrat paul("paul", 1);
-		Bureaucrat pierre("pierre", 160);
+		Bureaucrat pierre("pierre", 150);
 		std::cout << std::endl;
 		pierre.executeForm(*test);
 		pierre.signForm(*test);
@@ -27,7 +27,7 @@ int main(void) {
 		std::cout << std::endl;
 		paul.executeForm(*robo);
 		std::cout << std::endl;
-		paul.executeForm(*prez);
+		pierre.executeForm(*prez);
 		std::cout << std::endl;
 
 		delete test;
@@ -42,17 +42,4 @@ int main(void) {
 	} catch (const Bureaucrat::GradeTooLowException& e) {
 		std::cerr << "Exception caught: " << e.what() << std::endl;
 	}
-/* 	try {
-	 */
-/* 	} catch (const Bureaucrat::GradeTooHighException &e) {
-		std::cerr << "Exception caught : " << e.what() << std::endl;
-	} catch (const Bureaucrat::GradeTooLowException &e) {
-		std::cerr << "Exception caught : " << e.what() << std::endl;
-	} catch (const AForm::GradeTooHighException &e) {
-		std::cerr << "Exception caught : " << e.what() << std::endl;
-	} catch (const AForm::GradeTooLowException &e) {
-		std::cerr << "Exception caught : " << e.what() << std::endl;
-	} catch (const AForm::UnsignedForm& e) {
-		std::cerr <<"Exception caught : " << e.what() << std::endl;
-	} */
 }

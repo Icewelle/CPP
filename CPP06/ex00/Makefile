@@ -2,11 +2,12 @@ MAKEFLAGS += --silent
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 SRCS =	main.cpp\
+		ScalarConverter.cpp
 		
 OBJ = $(addprefix $(BIN_DIR)/,$(SRCS:.cpp=.o))
-NAME = Bureaucrat
+NAME = convert
 SRCS_DIR = .
-BIN_DIR = ./bin
+BIN_DIR = ./obj
 
 # ------------------------------ Colors ------------------------------
 

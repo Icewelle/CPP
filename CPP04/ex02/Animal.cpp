@@ -25,15 +25,3 @@ Animal &Animal::operator=(const Animal &other)
 const std::string &Animal::getType(void) const {
 	return (this->_type);
 }
-
-
-void	Animal::makeSound(void) const {
-	std::cout << "*you hear an indescriptible noise coming from that thing*" << std::endl;
-	std::cout << "Maybe you should run ?" << std::endl;
-	std::cout << std::endl;
-}
-
-const std::string	&Animal::getIdea(int i) const {
-	(void)i;
-	return (_type);
-}
