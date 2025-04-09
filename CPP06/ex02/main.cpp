@@ -11,4 +11,5 @@ int main(void) {
 	identify(*test);
 	identify(test2);
 	delete test;
+	delete &test2;
 }
