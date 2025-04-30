@@ -1,9 +1,10 @@
 #include <iostream>
+#include <set>
 
 class Span
 {
 	private:
-		int *_array;
+		std::multiset<int> *_array;
 		unsigned int _size;
 	public:
 		Span();

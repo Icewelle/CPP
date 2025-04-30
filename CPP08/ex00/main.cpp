@@ -41,7 +41,7 @@ int main(void) {
 	set.insert(0);
 	set.insert(1);
 	set.insert(2);
-	//set.insert(3);
+	set.insert(3);
 	try {
 		easyfind(set, 3);
 	} catch (const std::exception& e) {

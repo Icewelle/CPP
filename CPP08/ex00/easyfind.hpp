@@ -3,13 +3,10 @@
 
 template <typename T>
 int easyfind(const T& container, const int toFind) {
-	int count = -1;
-	for (typename T::const_iterator i = container.begin(); i != container.end(); ++i) {
-		++count;
-		if (*i == toFind) {
-			std::cout << toFind << " was found at emplacement : #" << count << std::endl;
-			return (count);
-		}
+	typename	T::const_iterator it = std::find(container.begin(), container.end(), toFind);
+	if (it == container.end()) {
+		throw std::invalid_argument("argument is not in the container");
 	}
-	throw std::invalid_argument("argument is not in the container");
+	std::cout << "First iteration of (" << toFind << ") was found at emplacement : #" << std::distance(container.begin(), it) << std::endl;
+	return (*it);
 }

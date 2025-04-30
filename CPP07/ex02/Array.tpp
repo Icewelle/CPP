@@ -30,6 +30,9 @@ class Array {
 			delete[] _array;
 		}
 		T &operator=(Array& other) {
+			if (this == &other) {
+				return (*this);
+			}
 			_size = other.size();
 			if (_size == 0) {
 				_array = NULL;
@@ -39,7 +42,7 @@ class Array {
 			for (unsigned int i = 0; i < _size; ++i) {
 				_array[i] = other._array[i];
 			}
-			return (*_array);
+			return (*this);
 		}
 		T& operator[](unsigned int pos) {
 			if (pos >= _size) {
