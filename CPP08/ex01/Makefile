@@ -2,9 +2,10 @@ MAKEFLAGS += --silent
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 SRCS =	main.cpp\
+		Span.cpp
 		
 OBJ = $(addprefix $(BIN_DIR)/,$(SRCS:.cpp=.o))
-NAME = Bureaucrat
+NAME = Span
 SRCS_DIR = .
 BIN_DIR = ./bin
 

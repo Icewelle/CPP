@@ -1,6 +1,6 @@
 #include <string>
 #include <iostream>
-#include "Array.tpp"
+#include "Array.hpp"
 
 int main(void) {
 	Array<int> intArray(5);
