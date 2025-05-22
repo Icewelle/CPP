@@ -5,6 +5,7 @@ void ScalarConverter::convert(const std::string& literal) {
 	char c;
 	int i;
 	float f;
+
 	if (literal.length() == 1 && !std::isdigit(literal[0])) {
         c = literal[0];
         i = static_cast<int>(c);
@@ -16,6 +17,7 @@ void ScalarConverter::convert(const std::string& literal) {
 		i = static_cast<int>(d);
 		f = static_cast<float>(d);
 	}
+
 	std::cout << "char: ";
 	if (d < std::numeric_limits<char>::min() || d > std::numeric_limits<char>::max() || std::isnan(d)) {
 		std::cout << "impossible";
