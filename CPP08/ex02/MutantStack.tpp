@@ -1,3 +1,5 @@
+#include "MutantStack.hpp"
+
 template < typename T, typename Container>
 MutantStack< T , Container>::MutantStack(void) : base_type() {}
 
