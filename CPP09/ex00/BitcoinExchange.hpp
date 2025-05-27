@@ -3,13 +3,16 @@
 #include <map>
 #include <iostream>
 #include <fstream>
+#include <algorithm>
+#include <exception>
 
 class BitcoinExchange
 {
 private:
-	std::map<std::string, double> _data;
+	std::map<int, double> _data;
+	void fill_data(void);
 public:
-	BitcoinExchange(std::string &fileName);
+	BitcoinExchange(char *fileName);
 	~BitcoinExchange();
 };
 
