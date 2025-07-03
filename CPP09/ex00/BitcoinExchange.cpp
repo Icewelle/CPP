@@ -9,6 +9,7 @@ static float check_value(std::string value) {
         return -1;
     if (iss >> c)
         return -1;
+	//round value to 2 decimals so calculation is more acurrate with given data.
     return (std::atof(value.c_str()));
 }
 
@@ -35,6 +36,7 @@ static int check_date(std::string year, std::string month, std::string day) {
 			return (-3);
 		++dayIT;
 	}
+	//verifier valeur (12 mois, 31 jours max)
 	return (0);
 }
 
@@ -75,21 +77,19 @@ void	BitcoinExchange::fill_data(void) {
 
 	getline(file, line);
 	if (line != "date,exchange_rate")
-		throw (std::invalid_argument("Error: parsing: wrong format in line : "));
+		throw (std::invalid_argument("Error: parsing: database: wrong format in line : "));
 	while (getline(file, line)) {
 		size_t	delimiterPos = line.find(',');
 		if (delimiterPos == std::string::npos)
-			throw (std::invalid_argument("Error: parsing: missing delimiter"));
+			throw (std::invalid_argument("Error: parsing: database: missing delimiter"));
 		int key = check_key(line.substr(0, delimiterPos));
 		if (key < 0)
-			throw (std::invalid_argument("Error: parsing: wrong date format"));
+			throw (std::invalid_argument("Error: parsing: database: wrong date format"));
 		std::string value = line.substr(delimiterPos + 1);
 		float val = check_value(value);
-		std::cout << val;
 		if (val < 0.00)
-			throw (std::invalid_argument("Error: parsing: number is not positive"));
-		_data.insert(std::make_pair(key, val));
-		std::cout << key << " " << std::fixed << std::setprecision(2) << val << std::endl;
+            throw (std::invalid_argument("Error: parsing: database: number is not positive"));
+        _data.insert(std::make_pair(key, val));
 	}
 }
 
@@ -105,6 +105,7 @@ BitcoinExchange::BitcoinExchange(char *fileName) {
 	} catch (std::invalid_argument &e) {
 		std::cerr << e.what() << '\n';
 	}
+	//parsing test.txt and compare each line with key (date) 
 }
 
 BitcoinExchange::~BitcoinExchange() {}

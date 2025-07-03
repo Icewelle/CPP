@@ -1,6 +1,6 @@
 MAKEFLAGS += --silent
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -fPIE
 SRCS =	main.cpp\
 		BitcoinExchange.cpp
 		

@@ -17,5 +17,3 @@ public:
 	BitcoinExchange(char *fileName);
 	~BitcoinExchange();
 };
-
-

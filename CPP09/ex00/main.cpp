@@ -15,5 +15,4 @@ int	main(int argc, char **argv) {
 	if (!args(argc, argv))
 		return (false);
 	BitcoinExchange	test(argv[1]);
-
 }
