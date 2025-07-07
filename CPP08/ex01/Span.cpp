@@ -23,6 +23,8 @@ Span::Span(const Span& other) : _size(other._size) {
 
 Span::~Span() {}
 
+//need operator=
+
 void	Span::addNumber(const int val) {
 	if (_array->size() == _size) {
 		throw std::out_of_range("cannot add numbers: Span is full");

@@ -6,11 +6,11 @@ static float check_value(std::string value) {
     char c;
 
     if (!(iss >> d))
-        return -1;
-    if (iss >> c)
-        return -1;
-	//round value to 2 decimals so calculation is more acurrate with given data.
-    return (std::atof(value.c_str()));
+		return -1;
+	if (iss >> c)
+		return -1;
+	float val = std::atof(value.c_str());
+    return round(val * 100) / 100.0f;
 }
 
 static int check_date(std::string year, std::string month, std::string day) {
@@ -36,7 +36,33 @@ static int check_date(std::string year, std::string month, std::string day) {
 			return (-3);
 		++dayIT;
 	}
-	//verifier valeur (12 mois, 31 jours max)
+	if (std::atoi(month.c_str()) > 12 || std::atoi(month.c_str()) < 1 || \
+		std::atoi(day.c_str()) > 31 || std::atoi(day.c_str()) < 1)
+		return (-3);
+	switch (std::atoi(month.c_str())) {
+		case 2:
+			if (std::atoi(day.c_str()) > 29)
+				return (-3);
+			break;
+		case 4:
+			if (std::atoi(day.c_str()) > 30)
+				return (-3);
+			break;
+		case 6:
+			if (std::atoi(day.c_str()) > 30)
+				return (-3);
+			break;
+		case 9:
+			if (std::atoi(day.c_str()) > 30)
+				return (-3);
+			break;
+		case 11:
+			if (std::atoi(day.c_str()) > 30)
+				return (-3);
+			break;
+		default:
+			break;
+	}
 	return (0);
 }
 
@@ -103,9 +129,20 @@ BitcoinExchange::BitcoinExchange(char *fileName) {
 	try {
 		fill_data();
 	} catch (std::invalid_argument &e) {
-		std::cerr << e.what() << '\n';
+		std::cerr << "data.csv: " << e.what() << '\n';
 	}
-	//parsing test.txt and compare each line with key (date) 
+}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& other) {
+	_data = other._data;
 }
 
 BitcoinExchange::~BitcoinExchange() {}
+
+
+BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other) {
+	//copy map of other in this map
+	
+}
+
+//parsing test.txt and compare each line with key (date)

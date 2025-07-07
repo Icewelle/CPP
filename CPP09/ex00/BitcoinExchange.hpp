@@ -7,6 +7,7 @@
 #include <exception>
 #include <iomanip>
 #include <sstream>
+#include <cmath>
 
 class BitcoinExchange
 {
@@ -15,5 +16,9 @@ private:
 	void fill_data(void);
 public:
 	BitcoinExchange(char *fileName);
+	BitcoinExchange(const BitcoinExchange& other);
 	~BitcoinExchange();
+
+	BitcoinExchange& operator=(const BitcoinExchange& other);
+	
 };
