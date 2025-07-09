@@ -14,5 +14,6 @@ static bool args(int argc, char **argv) {
 int	main(int argc, char **argv) {
 	if (!args(argc, argv))
 		return (false);
-	BitcoinExchange	test(argv[1]);
+	BitcoinExchange	test;
+	test.calculate(argv[1]);
 }
