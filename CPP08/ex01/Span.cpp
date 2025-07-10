@@ -23,7 +23,13 @@ Span::Span(const Span& other) : _size(other._size) {
 
 Span::~Span() {}
 
-//need operator=
+Span&	Span::operator=(const Span& other) {
+	if (this != &other) {
+		_array = other._array;
+		_size = other._size;
+	}
+	return (*this);
+}
 
 void	Span::addNumber(const int val) {
 	if (_array->size() == _size) {

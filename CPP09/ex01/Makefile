@@ -2,6 +2,7 @@ MAKEFLAGS += --silent
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 SRCS =	main.cpp\
+		RPN.cpp
 		
 OBJ = $(addprefix $(BIN_DIR)/,$(SRCS:.cpp=.o))
 NAME = RPN

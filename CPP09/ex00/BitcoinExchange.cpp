@@ -193,7 +193,8 @@ BitcoinExchange::~BitcoinExchange() {}
 
 
 BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other) {
-	_data = other._data;
+	if (this != &other)
+		_data = other._data;
 	return (*this);
 }
 
