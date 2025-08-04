@@ -39,10 +39,10 @@ void ScalarConverter::convert(const std::string& literal) {
 	std::cout << std::fixed;
 
 	std::cout << "float: ";
-	std::cout << std::setprecision(2)<< f << "f";
+	std::cout << std::setprecision(1)<< f << "f";
 	std::cout << std::endl;
 
 	std::cout << "double: ";
-	std::cout << std::setprecision(2) << d;
+	std::cout << std::setprecision(1) << d;
 	std::cout << std::endl;
 }
