@@ -21,7 +21,6 @@ void	RPN::fill_data(int nb) {
 int RPN::operation(int opera) {
 	if (_data.size() < 2)
 		return (false);
-
 	int val1 = _data.top();
 	_data.pop();
 	int val2 = _data.top();
@@ -33,7 +32,10 @@ int RPN::operation(int opera) {
 		_data.push(val2 * val1);
 		break;
 	case '/':
-		_data.push(val2 / val1);
+		if (val1 == 0)
+			return (false);
+		else 
+			_data.push(val2 / val1);
 		break;
 	case '+':
 		_data.push(val2 + val1);

@@ -19,5 +19,8 @@ int main(int argc, char **argv) {
 		}
 		i += 2;
 	}
+	if (i >= input.size())
+		if (input[input.size() - 1] != '+' && input[input.size() - 1] != '-' && input[input.size() - 1] != '*' && input[input.size() - 1] != '/')
+			return (std::cerr << "Error\n", 1);
 	std::cout << result.get_result() << std::endl;
 }
